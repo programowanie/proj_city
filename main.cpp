@@ -2,7 +2,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <ctime>
-#include <unistd.h> //do zmiany pod Linux (unistd.h)
+#include <unistd.h>
+
 
 #include "city.h"
 
@@ -13,13 +14,14 @@ int main()
     srand(time(NULL));
     bool theend = false;
     city wro;
+
     wro.raport();
     while(theend == false)
     {
-        usleep(1000);
+        sleep(2);
         wro.turn();
         wro.raport();
-
+        wro.event();
         if(wro.week==10) theend = true;
     }
 

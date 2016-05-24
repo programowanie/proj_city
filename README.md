@@ -4,4 +4,4 @@ Symulacją którą chcę stworzyć będzie wzorowała się na tej z gry SimCity.
 
 Symulacja posiada o wiele większy potencjał niż to co zakłada powyższy plan. W procesie dalszej jej rozbudowy można pokusić się o stworzenie miasta złożonego z pól posiadających różne funkcje (np. las, fabryka, teren mieszkalny), na które też będą wpływać nowe wydarzenia. Alternatywnie jest też możliwe aby wprowadzić obserwację jednego lub grupy mieszkańców (można wykorzystać klasę Slav) na którego/ych te wydarzenia mogą wpływać. Ten drugi pomysł może się wydawać już trochę przesadzony ale zawsze jest jakaś alternatywa.
 
-Zastanawiam się tylko czy wydarzenia które będą się odbywać powinny być zapisane w kodzie w formie różnych funkcji czy może w zewnętrznym pliku skąd będzie pobierana treść wydarzenia i zmiany atrybutów miasta.
+

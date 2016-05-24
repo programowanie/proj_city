@@ -14,6 +14,7 @@ public:
 
     void turn();
     void raport();
+    void event();
 
     city();
 };
