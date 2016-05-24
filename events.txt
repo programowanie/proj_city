@@ -6,6 +6,7 @@ Uwagi:
 - Należy trzymać się dokładnie wzoru wydarzenia.
 - W przypadku braku zmiany danego parametru w wydarzenia nalezy wpisać gdy int 0, gdy double 1.
 - Im większa ilość wydarzeń tym większe prawdopodobieństwo że coś się wydarzy w danej turze.
+
 Struktura wydarzenia:
 -------------------------
 Treść wydarzenia
@@ -18,10 +19,10 @@ Zmiana dochodu (double)
 EVENTY:
 -------------------------
 Treść wydarzenia
-Zmiana populacji (int)
-Zmiana budżetu (int)
-Zmiana przyr. nat. (double)
-Zmiana dochodu (double)
+0Zmiana populacji (int)
+0Zmiana budżetu (int)
+1Zmiana przyr. nat. (double)
+1Zmiana dochodu (double)
 -------------------------
 Treść wydarzenia
 Zmiana populacji (int)

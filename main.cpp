@@ -24,6 +24,6 @@ int main()
         wro.event();
         if(wro.week==10) theend = true;
     }
-
+    printf("Koniec symulacji\n");
 
 }
