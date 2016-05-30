@@ -5,8 +5,15 @@
 #include <cstdio>
 #include <fstream>
 #include <string>
+#include <vector>
 
 using namespace std;
+
+vector<string> events;
+int t_pop = 0;
+int t_budget = 0;
+double t_pop_growth = 1;
+double t_income = 1;
 
 int random_value()
 {
@@ -29,46 +36,34 @@ void city::raport()
     printf("\nBudzet : %15.2f zl  Przychod : %6.3f zl/tydzien", budget,income);
 }
 
-
 void city::turn()
 {
-    pop += pop * pop_growth;
-    budget += income;
-    pop_growth = (pop / 100.00000)/budget;
-    income = pop / 10;
+    pop += pop * pop_growth + t_pop;
+    budget += income + t_budget;
+    pop_growth = ((pop / 100.00000)/budget) * t_pop_growth;
+    income = (pop / 10) * t_income;
     week++;
 }
 
 void city::event()
 {
-    string eve;
-    int tpop=0,tbud=0;
-    double tpgr=1,tinc=1;
-    printf("\n\nCity::event:");
-    fstream file;
-    file.open("events.txt",ios::in);
-    string temp_str;
-    int line=1;
-    while(getline(file,temp_str))
+    string line;
+    int n = rand()%20;
+    ifstream file("events.csv");
+    if(file)
     {
-        if(line>20)
+        while(getline(file,line,'|'))
+        events.push_back(line);
+        for (int i = n*5; i < n*5+5; ++i)
         {
-            switch((line-20)%6)
+            switch(i-(n*5))
             {
-            case 1: eve=temp_str;
-            case 2: tpop=atoi(temp_str.c_str());
-            case 3: tbud=atoi(temp_str.c_str());
-            case 4: tpgr=atof(temp_str.c_str());
-            case 5: tinc=atof(temp_str.c_str());
+                case 0: cout << events[i] << endl; break;
+                case 1: t_pop = atoi(events[i].c_str()); break;
+                case 2: t_budget = atoi(events[i].c_str()); break;
+                case 3: t_pop_growth = atof(events[i].c_str()); break;
+                case 4: t_income = atof(events[i].c_str()); break;
             }
         }
-        line++;
     }
-
-    cout << eve << endl 
-        << tpop << endl 
-        << tbud << endl 
-        << tpgr << endl 
-        << tinc << endl;
 }
-
