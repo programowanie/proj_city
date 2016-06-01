@@ -4,7 +4,6 @@
 #include <ctime>
 #include <unistd.h>
 
-
 #include "city.h"
 
 using namespace std;
@@ -23,9 +22,11 @@ int main()
         wroc.raport();
         wroc.event();
         wroc.turn();
-        if(wroc.week > 50){theend = true; printf("Mineło 50 tur\n");}
-        if(wroc.pop < 1){theend = true; printf("Miasto wymarlo\n");}
+        
+        if(wroc.week > 50){theend = true; printf("MINĘŁO 50 TUR\n");}
+        if(wroc.pop < 1){theend = true; printf("MIASTO WYMARŁO\n");}
+        if(wroc.budget < 1) {theend = true; printf("MIASTO ZBANKRUTOWAŁO\n");}
     }
-    printf("Koniec symulacji\n");
+    printf("KONIEC SYMULACJI\n");
 
 }

@@ -10,21 +10,12 @@
 using namespace std;
 
 vector<string> events;
-int t_pop = 0;
-int t_budget = 0;
-double t_pop_growth = 1;
-double t_income = 1;
-
-int random_value()
-{
-    return 1 + rand()%100;
-}
 
 city::city()
 {
     week = 1;
-    pop = random_value() * 1000;
-    budget = random_value() * 10000;
+    pop = (rand()%100+1) * 1000;
+    budget = (rand()%100+1)* 10000;
     pop_growth = (pop / 100.00000)/budget;
     income = pop / 10;
 }
@@ -48,7 +39,7 @@ void city::turn()
 void city::event()
 {
     string line;
-    int n = rand()%20;
+    int n = rand()%30;
     ifstream file("events.csv");
     if(file)
     {
@@ -56,6 +47,7 @@ void city::event()
         events.push_back(line);
         for (int i = n*5; i < n*5+5; ++i)
         {
+            if(events[i].empty()) break;
             switch(i-(n*5))
             {
                 case 0: cout << events[i] << endl; break;
