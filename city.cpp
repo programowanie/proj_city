@@ -15,7 +15,7 @@ city::city()
 {
     week = 1;
     pop = (rand()%100+1) * 1000;
-    budget = (rand()%100+1)* 10000;
+    budget = (rand()%50+1)* 10000;
     pop_growth = (pop / 100.00000)/budget;
     income = pop / 10;
 }
@@ -39,7 +39,7 @@ void city::turn()
 void city::event()
 {
     string line;
-    int n = rand()%30;
+    int n = rand()%45;
     ifstream file("events.csv");
     if(file)
     {
