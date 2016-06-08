@@ -18,6 +18,7 @@ city::city()
     budget = (rand()%10+1)* 100000;
     pop_growth = (pop / 100.00000)/budget;
     income = pop / 10;
+    t_pop = t_budget = t_pop_growth = t_income = 0;
 }
 
 void city::raport()
@@ -45,7 +46,7 @@ void city::event()
     {
         while(getline(file,line,'|'))
         events.push_back(line);
-        for (int i = n*5; i < n*5+5; ++i)
+        for (int i = n * 5; i < n * 5 + 5; ++i)
         {
             if(events[i].empty()) break;
             switch(i-(n*5))

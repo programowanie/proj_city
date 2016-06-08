@@ -11,7 +11,6 @@ public:
     double budget;
     double pop_growth;
     double income;
-    double rating;
     //zmiany atrybutów
     int t_pop;
     int t_budget;
