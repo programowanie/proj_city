@@ -14,8 +14,8 @@ vector<string> events;
 city::city()
 {
     week = 1;
-    pop = (rand()%100+1) * 1000;
-    budget = (rand()%50+1)* 10000;
+    pop = (rand()%10+1) * 10000;
+    budget = (rand()%10+1)* 100000;
     pop_growth = (pop / 100.00000)/budget;
     income = pop / 10;
 }
@@ -31,7 +31,7 @@ void city::turn()
 {
     pop += pop * pop_growth + t_pop;
     budget += income + t_budget;
-    pop_growth = ((pop / 100.00000)/budget) * t_pop_growth;
+    pop_growth = ((pop / 100.000)/budget) * t_pop_growth;
     income = (pop / 10) * t_income;
     week++;
 }
@@ -59,3 +59,4 @@ void city::event()
         }
     }
 }
+ 
